@@ -2,9 +2,10 @@ import { Grid } from '@mui/material';
 import { CardItem } from '..//Card';
 import { useQuery } from 'react-query';
 import { getReposTS } from '../../api/rootApi';
-import Skeleton from '@mui/material/Skeleton';
 import { CardSkeleton } from '../UI/CardSkeleton';
 import { mock } from '../../mock';
+import Alert from '@mui/material/Alert';
+import { ErrorMessage } from './constants';
 
 export const Cards = (): JSX.Element => {
 	const { data, isLoading, isError } = useQuery('todos', async () => {
@@ -14,6 +15,13 @@ export const Cards = (): JSX.Element => {
 
 	if (isLoading) {
 		return <CardSkeleton />;
+	}
+	if (isError) {
+		return (
+			<Alert variant="filled" severity="error">
+				{ErrorMessage}
+			</Alert>
+		);
 	}
 
 	return (

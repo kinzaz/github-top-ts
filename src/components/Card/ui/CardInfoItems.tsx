@@ -9,7 +9,11 @@ export const CardInfoItems = ({
 }): JSX.Element => {
 	return (
 		<>
-			<CardInfo title={CARD_INFO.DESCRIPTION} description={description} />
+			<CardInfo
+				title={CARD_INFO.DESCRIPTION}
+				description={description}
+				sx={{ flexGrow: 1 }}
+			/>
 			<CardInfo
 				title={CARD_INFO.FORKS_COUNT}
 				description={numberUpdate(forksCount)}

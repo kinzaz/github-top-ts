@@ -13,6 +13,7 @@ import { getImage } from '../../helpers/getImage';
 import { CARD_BTN } from './constants';
 import { CardHeaderItem } from './ui/CardHeaderItem';
 import { CardInfoItems } from './ui/CardInfoItems';
+import { CardStyle } from './style';
 
 export const CardItem = ({
 	avatar,
@@ -26,7 +27,7 @@ export const CardItem = ({
 	stars,
 }) => {
 	return (
-		<Card>
+		<Card sx={CardStyle}>
 			<CardHeaderItem
 				avatar={avatar}
 				createdAt={createdAt}

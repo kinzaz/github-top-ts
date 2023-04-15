@@ -1,14 +1,25 @@
-import { CardContent, Typography } from '@mui/material';
+import { Box, BoxProps, SxProps, Theme, Typography } from '@mui/material';
 
-export const CardInfo = ({ title, description }): JSX.Element => {
+interface CardInfoProps extends BoxProps {
+	title: string;
+	description: string;
+	sx?: SxProps<Theme> | undefined;
+}
+
+export const CardInfo = ({
+	title,
+	description,
+	sx,
+	...props
+}: CardInfoProps): JSX.Element => {
 	return (
-		<CardContent>
+		<Box sx={{ padding: '10px', ...sx }} {...props}>
 			<Typography variant="body1" color="text.primary">
 				{title}:
 			</Typography>
 			<Typography variant="body2" color="text.secondary">
 				{description}
 			</Typography>
-		</CardContent>
+		</Box>
 	);
 };
