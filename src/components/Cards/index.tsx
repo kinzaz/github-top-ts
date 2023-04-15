@@ -10,6 +10,7 @@ import { ErrorMessage } from './constants';
 export const Cards = (): JSX.Element => {
 	const { data, isLoading, isError } = useQuery('todos', async () => {
 		// const response = await getReposTS();
+		// total count 4032026
 		// return response.items;
 	});
 
