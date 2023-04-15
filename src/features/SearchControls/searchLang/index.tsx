@@ -10,17 +10,23 @@ import { setLanguage } from './searchLang.slice';
 import { useAppDispatch } from '../../../store';
 import { useSelector } from 'react-redux';
 import { selectorCurrentLanguage } from './searchLang.selector';
+import { TSearchByLang } from './data.content';
+import { toggleTheme } from '../../theme/theme.slice';
 
 export const SwitchLangSearch = () => {
 	const dispatch = useAppDispatch();
 	const currentLanguage = useSelector(selectorCurrentLanguage);
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(setLanguage(event.target.value));
+		dispatch(setLanguage(event.target.value as TSearchByLang['value']));
+		dispatch(toggleTheme());
 	};
 
 	return (
 		<FormControl>
-			<FormLabel id="demo-controlled-radio-buttons-group">
+			<FormLabel
+				sx={{ fontSize: '15px' }}
+				id="demo-controlled-radio-buttons-group"
+			>
 				{RADIO_LANGUAGE}
 			</FormLabel>
 			<RadioGroup
@@ -35,6 +41,14 @@ export const SwitchLangSearch = () => {
 								value={lang.value}
 								control={<Radio />}
 								label={lang.langName}
+								sx={{
+									'& .MuiSvgIcon-root': {
+										fontSize: 18,
+									},
+									'& .MuiTypography-root': {
+										fontSize: 12,
+									},
+								}}
 							/>
 						</>
 					);
