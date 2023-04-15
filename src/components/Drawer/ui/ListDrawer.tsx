@@ -1,25 +1,27 @@
-import {
-	Box,
-	List,
-	ListItem,
-	ListItemButton,
-	ListItemIcon,
-	ListItemText,
-	Divider,
-} from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import { Box, Divider } from '@mui/material';
 import { SwitchLangSearch } from '../../../features/SearchControls/searchLang';
+import { DisplaySelect } from '../../../features/SearchControls/displayContent';
+import { styled } from '@mui/material/styles';
+
+const ListDrawerWrapper = styled(Box)`
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 25px;
+	width: auto;
+	min-width: 250px;
+`;
 
 export const ListDrawer = ({ toggleDrawer }): JSX.Element => {
 	return (
-		<Box
-			sx={{ width: 250, padding: '10px' }}
+		<ListDrawerWrapper
 			role="presentation"
 			onClick={toggleDrawer(false)}
 			onKeyDown={toggleDrawer(false)}
 		>
 			<SwitchLangSearch />
-		</Box>
+			<Divider />
+			<DisplaySelect />
+		</ListDrawerWrapper>
 	);
 };
