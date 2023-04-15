@@ -95,26 +95,7 @@ module.exports = {
 				use: cssLoaders(),
 			},
 			{
-				test: /\.s[ac]ss$/i,
-				use: cssLoaders('sass-loader'),
-			},
-			{
-				test: /\.scss$/,
-				use: [
-					{
-						loader: 'sass-resources-loader',
-						options: {
-							resources: path.resolve(__dirname, 'src/styles/index.scss'),
-						},
-					},
-				],
-			},
-			{
 				test: /\.(png|jpg|svg|gif)$/,
-				type: 'asset/resource',
-			},
-			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
 			},
 		],

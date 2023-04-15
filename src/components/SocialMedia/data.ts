@@ -1,12 +1,6 @@
-// import GithubLogo from '../../assets/logo-github.svg';
-// import TelegramLogo from '../../assets/logo-telegram.svg';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import {
-	ExtendButtonBase,
-	IconButtonTypeMap,
-	SvgIconTypeMap,
-} from '@mui/material';
+import { SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 type TCustomnData = {

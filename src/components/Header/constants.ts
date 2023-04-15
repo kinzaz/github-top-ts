@@ -1,1 +1,1 @@
-export const HEADER_TITLE = 'Typescript projects'
+export const HEADER_TITLE = 'GitHub repos'
