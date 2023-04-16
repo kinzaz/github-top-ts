@@ -1,5 +1,5 @@
-import JSLogo from '../assets/javascript-logo.png';
-import TSLogo from '../assets/typescript-logo.png';
+import JSLogo from '../assets/JavaScript-logo.png';
+import TSLogo from '../assets/TypeScript-logo.png';
 
 export const getImage = (lang: string) => {
 	switch (lang) {
