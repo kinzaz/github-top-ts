@@ -50,7 +50,7 @@ module.exports = {
 	},
 	output: {
 		filename: filename('js'),
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'public'),
 	},
 	resolve: {
 		extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
@@ -64,7 +64,7 @@ module.exports = {
 	},
 	devServer: {
 		static: {
-			directory: path.join(__dirname, 'dist'),
+			directory: path.join(__dirname, 'public'),
 		},
 		watchFiles: ['src/**/*'],
 		compress: true,
