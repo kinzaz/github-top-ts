@@ -6,10 +6,10 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { RADIO_LANGUAGE } from './constants';
 import { dataLang } from './data.content';
-import { setLanguage } from './searchLang.slice';
+import { setLanguage } from '../searchLang.slice';
 import { useAppDispatch } from '../../../store';
 import { useSelector } from 'react-redux';
-import { selectorCurrentLanguage } from './searchLang.selector';
+import { selectorCurrentLanguage } from '../searchLang.selector';
 import { TSearchByLang } from './data.content';
 import { toggleTheme } from '../../theme/theme.slice';
 

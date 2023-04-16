@@ -1,13 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type TPaginationSlice = {
-	perPage: number;
 	page: number;
+	totalContent: number;
 };
 
 const initialState: TPaginationSlice = {
-	perPage: 10,
 	page: 1,
+	totalContent: 0,
 };
 
 const paginationSlice = createSlice({
@@ -17,12 +17,12 @@ const paginationSlice = createSlice({
 		setPage: (state, action: PayloadAction<number>) => {
 			state.page = action.payload;
 		},
-		setPerPage: (state, action: PayloadAction<number>) => {
-			state.perPage = action.payload;
+		setTotalContent: (state, action: PayloadAction<number>) => {
+			state.totalContent = action.payload;
 		},
 	},
 });
 
-export const { setPage, setPerPage } = paginationSlice.actions;
+export const { setPage, setTotalContent } = paginationSlice.actions;
 
 export const paginationReducer = paginationSlice.reducer;

@@ -6,8 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
-const { EnvironmentPlugin } = require('webpack');
 const isDev = process.env.NODE_ENV === 'development';
+const { EnvironmentPlugin } = require('webpack');
 const isProd = process.env.NODE_ENV !== 'development';
 const filename = ext => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 
@@ -22,6 +22,9 @@ const plugins = [
 	new MiniCssExtractPlugin({ filename: filename('css') }),
 	new webpack.ProvidePlugin({
 		React: 'react',
+	}),
+	new EnvironmentPlugin({
+		REACT_BACKEND_URL: 'https://api.github.com/search/',
 	}),
 ];
 

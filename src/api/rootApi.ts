@@ -1,7 +1,6 @@
-import { searchRepos } from "./config";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const getReposTS = async () => {
-	const response = await fetch(searchRepos());
-	const data = await response.json();
-	return data;
-};
+export const rootApi = createApi({
+	baseQuery: fetchBaseQuery({ baseUrl: `${process.env.REACT_BACKEND_URL}` }),
+	endpoints: () => ({}),
+});

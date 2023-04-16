@@ -1,20 +1,26 @@
 import { Grid } from '@mui/material';
 import { CardItem } from '..//Card';
-import { useQuery } from 'react-query';
-import { getReposTS } from '../../api/rootApi';
 import { CardSkeleton } from '../UI/CardSkeleton';
 import { mock } from '../../mock';
 import Alert from '@mui/material/Alert';
 import { ErrorMessage } from './constants';
+import { useGetCardsQuery } from './cardsApi';
+import { getRequestArguments } from '../../helpers/getRequestArguments';
+import { useAppDispatch } from '../../store';
+import { setTotalContent } from '../../features/pagination/pagination.slice';
 
 export const Cards = (): JSX.Element => {
-	const { data, isLoading, isError } = useQuery('todos', async () => {
-		// const response = await getReposTS();
-		// total count 4032026
-		// return response.items;
-	});
+	const dispatch = useAppDispatch();
 
-	if (isLoading) {
+	const {
+		data: cards,
+		isLoading,
+		isFetching,
+		isError,
+		isSuccess,
+	} = useGetCardsQuery(getRequestArguments());
+
+	if (isLoading || isFetching) {
 		return <CardSkeleton />;
 	}
 	if (isError) {
@@ -24,10 +30,13 @@ export const Cards = (): JSX.Element => {
 			</Alert>
 		);
 	}
+	if (isSuccess) {
+		dispatch(setTotalContent(cards.total_count));
+	}
 
 	return (
 		<Grid container spacing={3}>
-			{mock.map(card => {
+			{cards.items.map(card => {
 				return (
 					<Grid key={card.id} item xs={12} sm={6} md={4} gap={5}>
 						<CardItem
