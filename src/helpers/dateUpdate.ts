@@ -1,4 +1,4 @@
-export const dateUpdate = date => {
+export const dateUpdate = (date: Date) => {
 	let formatter = new Intl.DateTimeFormat('ru', {
 		year: 'numeric',
 		month: 'numeric',

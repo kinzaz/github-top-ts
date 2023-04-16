@@ -24,6 +24,8 @@ const controlsSlice = createSlice({
 	},
 });
 
-export const { setLanguage, setQuantityContent } = controlsSlice.actions;
+const { setLanguage, setQuantityContent } = controlsSlice.actions;
 
-export const controlsReducer = controlsSlice.reducer;
+const controlsReducer = controlsSlice.reducer;
+
+export { setLanguage, setQuantityContent, controlsReducer };

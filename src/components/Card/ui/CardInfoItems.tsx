@@ -1,12 +1,16 @@
 import { CardInfo } from '../../UI/CardInfo';
-import { numberUpdate } from '../../../helpers/numberUpdate';
+import { numberUpdate } from '@helpers';
 import { CARD_INFO } from '../constants';
+import { CardItemProps } from '../';
 
 export const CardInfoItems = ({
 	description,
 	forksCount,
 	stars,
-}): JSX.Element => {
+}: Pick<
+	CardItemProps,
+	'description' | 'stars' | 'forksCount'
+>): JSX.Element => {
 	return (
 		<>
 			<CardInfo

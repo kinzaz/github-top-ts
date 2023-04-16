@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-export const useToggleDrawer = () => {
+export const useToggleDrawer = (): {
+	state: boolean;
+	toggleDrawer: (
+		open: boolean
+	) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+} => {
 	const [state, setState] = useState(false);
 
 	const toggleDrawer =

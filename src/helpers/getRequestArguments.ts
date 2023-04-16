@@ -1,11 +1,12 @@
 import {
 	selectQuantityContent,
 	selectorCurrentLanguage,
-} from '../features/SearchControls/searchLang.selector';
-import { selectorPage } from '../features/pagination/pagination.selector';
+	selectorPage,
+} from '@features';
 import { useSelector } from 'react-redux';
+import { TRequest } from '../types/requestType';
 
-export const getRequestArguments = () => {
+export const getRequestArguments = (): TRequest => {
 	const language = useSelector(selectorCurrentLanguage);
 	const amountContent = useSelector(selectQuantityContent);
 	const currentPage = useSelector(selectorPage);

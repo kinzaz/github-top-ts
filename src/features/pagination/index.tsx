@@ -2,7 +2,7 @@ import Pagination from '@mui/material/Pagination';
 import { useSelector } from 'react-redux';
 import { selectorPage, selectorTotalContent } from './pagination.selector';
 import { setPage } from './pagination.slice';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch } from '@store';
 import { ChangeEvent } from 'react';
 import { selectQuantityContent } from '../SearchControls/searchLang.selector';
 

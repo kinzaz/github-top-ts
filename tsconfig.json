@@ -19,7 +19,11 @@
 		"noImplicitAny": false,
 		"baseUrl": "src/",
 		"paths": {
-			"@pages/*": ["pages/*"]
+			"@features": ["features"],
+			"@components": ["components"],
+			"@store": ["store"],
+			"@api": ["api/rootApi"],
+			"@helpers": ["helpers"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src"],

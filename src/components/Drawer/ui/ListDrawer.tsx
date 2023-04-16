@@ -1,6 +1,5 @@
 import { Box, Divider } from '@mui/material';
-import { SwitchLangSearch } from '../../../features/SearchControls/searchLang';
-import { DisplaySelect } from '../../../features/SearchControls/displayContent';
+import { SwitchLangSearch, DisplaySelect } from '@features';
 import { styled } from '@mui/material/styles';
 
 const ListDrawerWrapper = styled(Box)`
@@ -12,10 +11,18 @@ const ListDrawerWrapper = styled(Box)`
 	min-width: 250px;
 `;
 
-export const ListDrawer = ({ toggleDrawer }): JSX.Element => {
+export const ListDrawer = ({
+	toggleDrawer,
+}: {
+	toggleDrawer: (
+		open: boolean
+	) => (
+		event: React.KeyboardEvent<Element> | React.MouseEvent<Element, MouseEvent>
+	) => void;
+}): JSX.Element => {
 	return (
 		<ListDrawerWrapper
-			role="presentation"
+			role='presentation'
 			onClick={toggleDrawer(false)}
 			onKeyDown={toggleDrawer(false)}
 		>

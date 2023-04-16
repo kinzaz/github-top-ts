@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
-import { blueTheme, yellowTheme } from '../features/theme/theme';
-import { selectorTheme } from '../features/theme/theme.selector';
+import { blueTheme, yellowTheme, selectorTheme } from '@features';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@mui/material/styles';
 

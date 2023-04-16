@@ -1,4 +1,4 @@
-export const numberUpdate = number => {
+export const numberUpdate = (number: number) => {
 	let formatter = new Intl.NumberFormat('ru', {
 		maximumSignificantDigits: 3,
 	});

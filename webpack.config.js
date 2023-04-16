@@ -3,7 +3,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const isDev = process.env.NODE_ENV === 'development';
@@ -56,8 +55,11 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
 		alias: {
-			'@': path.resolve(__dirname, 'src/'),
-			'@pages': path.resolve(__dirname, 'src/pages'),
+			'@features': path.resolve(__dirname, 'src/features'),
+			'@components': path.resolve(__dirname, 'src/components'),
+			'@store': path.resolve(__dirname, 'src/store'),
+			'@api': path.resolve(__dirname, 'src/api/rootApi'),
+			'@helpers': path.resolve(__dirname, 'src/helpers'),
 		},
 	},
 	devServer: {

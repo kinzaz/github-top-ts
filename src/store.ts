@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { paginationReducer } from './features/pagination/pagination.slice';
 import { useDispatch } from 'react-redux';
-import { controlsReducer } from './features/SearchControls/searchLang.slice';
 import { themeReducer } from './features/theme/theme.slice';
-import { rootApi } from './api/rootApi';
+import { controlsReducer } from './features/SearchControls/searchLang.slice';
+import { paginationReducer } from './features/pagination/pagination.slice';
+import { rootApi } from '@api';
 
 export const store = configureStore({
 	reducer: {
@@ -13,7 +13,7 @@ export const store = configureStore({
 		[rootApi.reducerPath]: rootApi.reducer,
 	},
 	devTools: true,
-	middleware: getDefaultMiddleware =>
+	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware().concat(rootApi.middleware),
 });
 

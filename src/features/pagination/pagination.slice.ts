@@ -23,6 +23,8 @@ const paginationSlice = createSlice({
 	},
 });
 
-export const { setPage, setTotalContent } = paginationSlice.actions;
+const { setPage, setTotalContent } = paginationSlice.actions;
 
-export const paginationReducer = paginationSlice.reducer;
+const paginationReducer = paginationSlice.reducer;
+
+export { setPage, setTotalContent, paginationReducer };
